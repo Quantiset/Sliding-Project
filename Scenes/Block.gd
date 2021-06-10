@@ -17,8 +17,7 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	print("hi")
 	if anim_name == "right":
-		position = position + Vector2(32, 0)
+		position.x += 32
 		$Sprite.offset = Vector2()
-		$CollisionShape2D.position = Vector2()
+		$CollisionShape2D.set_deferred("position", Vector2())
